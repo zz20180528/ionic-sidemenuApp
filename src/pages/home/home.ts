@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {AlertController, ModalController, NavController} from 'ionic-angular';
+
 import {Profile} from "../../interfaces/Profile";
+import {Account} from "../../interfaces/Account";
 
 @Component({
   selector: 'page-home',
@@ -9,6 +11,7 @@ import {Profile} from "../../interfaces/Profile";
 export class HomePage {
 
   public  profile = {} as Profile ;
+  private  accountData  = {} as Account;
 
   constructor(public navCtrl: NavController
             ,public modalCtrl : ModalController  //modal 컨트롤러 관련 추가
@@ -68,6 +71,8 @@ export class HomePage {
             handler: data => {
               console.log('Saved clicked');
               //
+              this.accountData = {name:data.name ,email:data.email};
+              this.navCtrl.push('NavPage',{accountData:data});
             }
           }
         ]

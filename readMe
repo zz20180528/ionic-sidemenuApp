@@ -368,3 +368,7 @@ unused import  제거하기   ctrl + alt + O
 
 
 C:\ionic_app\ionic-sidemenuApp>ionic g page slide
+
+
+
+C:\ionic_app\ionic-sidemenuApp>ionic g page nav
