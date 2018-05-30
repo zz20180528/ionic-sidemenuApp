@@ -1,0 +1,370 @@
+https://blog.naver.com/vega2k
+
+
+C:\ionic_app
+
+pdf 교재 다운로드
+
+ionic_Downloads.zip
+
+
+Git-2.16.2-64-bit.exe   : git client 프로그램
+  - minTTY 아닌 아래 선택
+
+
+node-v8.11.1-x64.msi    :
+  => node 버전확인
+	Microsoft Windows [Version 6.1.7601]
+	Copyright (c) 2009 Microsoft Corporation. All rights reserved.
+
+	C:\Users\kosta>node --version
+	v8.11.1
+
+	C:\Users\kosta>npm --version
+	5.6.0
+
+	C:\Users\kosta>
+
+
+
+WebStorm-2018.1.4.exe
+
+
+- ionic view(안드로이드용)
+- ionic dev (아이폰용)
+
+
+
+zz20180528@gmail.com
+
+
+git client 설치
+git 계정        : 이메일과동일
+ionic pro 가입  : 아이디는 이메일 : 비번의 첫글자는 대문자
+
+
+git 계정 필요
+github.com
+
+
+c:\ionic_app>npm install -g ionic cordova
+...
++ cordova@8.0.0
++ ionic@3.20.0
+added 680 packages in 187.301s
+
+c:\ionic_app>
+
+
+ionic CLI
+https://ionicframework.com/docs/cli/
+
+Angular CLI
+https://cli.angular.io/
+
+
+c:\ionic_app>ionic start ionic-myApp
+
+c:\ionic_app>ionic start ionic-myApp tabs
+
+c:\ionic_app>ionic start ionic-myApp sidemenu
+
+
+
+
+
+
+
+
+
+git hub repository 생성
+
+https://github.com/zz20180528/ionic-myApp
+
+
+ionic 프로젝트생성
+https://dashboard.ionicframework.com/apps
+
+new apps
+
+2. Connect your app to Ionic Pro
+
+
+
+
+webstorm
+
+ionic  serve -l
+(아이폰, 안드로이드, 윈도우 용 3가지 한꺼번에 보기)
+
+http://localhost:8100/ionic-lab
+
+
+https://github.com/zz20180528/ionic-myApp.git
+
+
+ionic login (emain 주소와 password 입력)
+
+Skip for now
+
+
+ionic ssh setup
+
+ionic link --pro-id 2e86a110
+
+
+
+
+
+
+:\ionic_app\ionic-myApp>ionic login
+Log into your Ionic account
+If you don't have one yet, create yours by running: ionic signup
+
+? Email: zz20180528@gmail.com
+
+? Password: [hidden]
+[OK] You are logged in!
+> ionic ssh setup
+[ERROR] Command not found: ssh
+[WARN] OpenSSH not found on your computer.
+Looks like you haven't configured your SSH settings yet.
+
+? How would you like to connect to Ionic Pro? Skip for now
+[WARN] Skipping for now. You can configure your SSH settings using ionic ssh setup.
+
+C:\ionic_app\ionic-myApp>
+
+
+
+
+git  add .
+git  status
+
+git config --global  user.email  "zz20180528@gmail.com"
+
+git config --global  user.name  "jaeha.kim"
+
+git commit  -m "first upload"
+
+
+git remote add  origin  https://github.com/zz20180528/ionic-myApp.git
+
+git push  --set-upstream origin master
+
+-----------------------------------------------------------------------
+
+
+
+git push 오류시 (타 계정 로그인으로 인한 오류발생시)
+
+git config --system  --unset  credential.helper
+git config --global  --unset  credential.helper
+
+
+
+
+
+ionic  > Activity > view master >
+
+
+
+
+-----------------------------------------------------
+
+
+ https://github.com/zz20180528/
+
+
+https://dashboard.ionicframework.com/apps
+
+
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation. All rights reserved.
+
+C:\ionic_app\ionic-myApp>cd ..
+
+C:\ionic_app>ionic start ionic-sidemenuApp sidemenu
+
+
+
+https://ionicframework.com/docs/
+
+C:\ionic_app>cd ionic-sidemenuApp
+
+C:\ionic_app\ionic-sidemenuApp>ionic serve
+
+
+
+
+https://ionicframework.com/docs/cli/serve/
+
+C:\ionic_app\ionic-sidemenuApp>ionic serve -l -c
+
+
+webstorm에서 git연결하기
+ionic-sidemenuApp > 마우스우측 > git > repository > remotes
+https://github.com/zz20180528/ionic-sidemenuApp.git
+
+
+
+https://dashboard.ionicframework.com/app/725f7d20/code/builds/list
+
+code > deploy
+
+
+
+
+npm install    => package.json 파일을 찾아서
+                   dependencies : 개발,운영에 필요한 라이브러리
+				devdependencies : 개발시에만 필요한 라이브러리
+				다운로드 받음
+
+	         rxjs : http 통신시 사용하는 데이터타입 objeve...사용
+
+             typescript는 개발시에만 필요함
+
+              tsconfig.json : ts컴파일러 옵션
+
+
+
+
+
+
+
+로딩순서
+-------index.html
+  --> main.ts
+  --> app.module.ts     ( Root modules)
+  -> app.component.ts   ( root component )
+  -> home/home.ts
+
+
+
+
+
+lazy 로딩  test 하기
+---------------------------------------------------
+C:\ionic_app\ionic-myApp\src\pages\home 폴더 삭제
+
+
+C:\ionic_app\ionic-myApp>ionic g page home
+[OK] Generated a page named home!
+
+C:\ionic_app\ionic-myApp>
+
+
+추가한 home 폴더에 home.module.ts 가 존재하므로  app.module.ts 에 homepage모듈을 추가할 필요없음
+
+
+app.component.ts 의
+  rootPage:any = HomePage; ///
+  아래와 같이 변경
+  rootPage:any = 'HomePage'; ///
+
+-------------------------------------------------------------------
+위와 같이 해도 안되는 경우
+
+home.ts
+@IonicPage({name:'homePage'})
+
+app.component.ts
+  rootPage:any = 'homePage'; ///
+
+  별도의 이름을 부여함 2군데..
+-------------------------------------------------------------
+
+
+
+
+C:\ionic_app\ionic-myApp>ionic  g page bind
+[OK] Generated a page named bind!
+
+C:\ionic_app\ionic-myApp>
+
+
+
+------------------------------
+
+one binding
+ two way binding
+
+ ------------------------------------
+
+
+ 신규 프로젝트 생성하기
+ ionic start ionic-sidemenuApp  sidemenu
+
+
+ 2018-05-30(수)  3일차...
+
+ action Sheet 추가하기
+
+C:\ionic_app\ionic-sidemenuApp>ionic  g page actionSheet
+[OK] Generated a page named actionSheet!
+
+C:\ionic_app\ionic-sidemenuApp>
+
+
+
+app.component.ts
+...
+      ,{ title: 'ActionSheet', component: 'ActionSheetPage' }  //lazy loding   action-sheet.module.ts 참고
+	 ...
+
+
+
+C:\ionic_app\ionic-sidemenuApp>ionic serve
+
+
+
+
+
+action-sheet.html
+...
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>actionSheet</ion-title>
+  </ion-navbar>
+...
+
+
+
+
+
+https://ionicframework.com/docs/components/#action-sheets
+
+
+demo Source
+
+https://github.com/ionic-team/ionic-preview-app/blob/master/src/pages/action-sheets/basic/styles.scss
+
+
+
+pages.ts
+  openMenu() {
+  ..
+  }
+
+
+
+
+C:\ionic_app\ionic-sidemenuApp>ionic g page modal
+[OK] Generated a page named modal!
+
+C:\ionic_app\ionic-sidemenuApp>
+
+
+
+=>  arrow  function
+
+
+unused import  제거하기   ctrl + alt + O
+                         code > optimize imports
+
+
+
+
+C:\ionic_app\ionic-sidemenuApp>ionic g page slide

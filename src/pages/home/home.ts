@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {ModalController, NavController} from 'ionic-angular';
+import {AlertController, ModalController, NavController} from 'ionic-angular';
 import {Profile} from "../../interfaces/Profile";
 
 @Component({
@@ -12,6 +12,7 @@ export class HomePage {
 
   constructor(public navCtrl: NavController
             ,public modalCtrl : ModalController  //modal 컨트롤러 관련 추가
+              ,public alertCtrl : AlertController //alert 컨트롤러 관련 추가
        ) {
 
   }
@@ -40,5 +41,39 @@ export class HomePage {
      }); // arrow  function
       modal.present();
   }
+
+
+    showPrompt() {
+      let prompt = this.alertCtrl.create({
+        title: 'Login',
+        message: "이름과 E메일 주소를 입력하세요.",
+        inputs: [
+          {
+            name: 'name',
+            placeholder: '이름 입력'
+          },{
+            name: 'email',
+            placeholder: 'E메일 입력'
+          },
+        ],
+        buttons: [
+          {
+            text: '취소',
+            handler: data => {
+              console.log('Cancel clicked');
+            }
+          },
+          {
+            text: '저장',
+            handler: data => {
+              console.log('Saved clicked');
+              //
+            }
+          }
+        ]
+      });
+      prompt.present();
+    }
+
 
 }
