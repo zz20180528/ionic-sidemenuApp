@@ -27,12 +27,16 @@ export class HomePage {
        //console.log( data.domestic );
        //console.log( data.startDate );
 
-       this.profile.actionSwitch = data.actionSwitch;
-       this.profile.name = data.name;
-       this.profile.gender = data.gender;
-       this.profile.domestic = data.domestic;
-       this.profile.startDate = data.startDate;
-
+       if (Object.keys(data).length === 0){
+         //property 값이 없는경우 , close () 호출해서 리턴된 경우
+         console.log(data);
+       } else {
+         this.profile.actionSwitch = data.actionSwitch;
+         this.profile.name = data.name;
+         this.profile.gender = data.gender;
+         this.profile.domestic = data.domestic;
+         this.profile.startDate = data.startDate;
+       }
      }); // arrow  function
       modal.present();
   }

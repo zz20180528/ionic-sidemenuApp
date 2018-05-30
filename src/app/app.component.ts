@@ -26,6 +26,7 @@ export class MyApp {
       { title: 'Home', component: HomePage }
       ,{ title: 'List', component: ListPage }
       ,{ title: 'ActionSheet', component: 'ActionSheetPage' }  //lazy loding
+      ,{ title: 'Slide', component: 'SlidePage' }  //lazy loding
 
     ];
 
