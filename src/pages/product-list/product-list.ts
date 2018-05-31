@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Product} from "../../model/Product";
 import {Observable} from "rxjs/Observable";
 import {RestProvider} from "../../providers/rest/rest";
+import {ProductPage} from "../product/product";
 
 /**
  * Generated class for the ProductListPage page.
@@ -30,6 +31,9 @@ export class ProductListPage {
     this.productsObservable= this.restProvidor.getProducts();
   }
 
-
+  productDetail(product:Product){
+    ///console.log( product );
+    this.navCtrl.push('ProductPage',{'myProduct':product})
+  }
 
 }

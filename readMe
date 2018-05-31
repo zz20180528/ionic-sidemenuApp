@@ -413,3 +413,14 @@ Observable<Object>
 
 Observable<Product[]>
 
+
+
+https://www.npmjs.com/package/ngx-order-pipe
+
+npm install  ngx-order-pipe --save
+
+
+C:\ionic_app\ionic-sidemenuApp>ionic g page product
+[OK] Generated a page named product!
+
+C:\ionic_app\ionic-sidemenuApp>
