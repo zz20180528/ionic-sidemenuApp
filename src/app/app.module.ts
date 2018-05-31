@@ -8,6 +8,9 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
+import { RestProvider } from '../providers/rest/rest';
 
 @NgModule({
   declarations: [
@@ -16,8 +19,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ListPage
   ],
   imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp),
+    BrowserModule
+    ,HttpClientModule // HttpClient를사용하기위해필요한모듈
+    ,FormsModule // ngModelDirective를사용하기위해필요한모듈
+    ,IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -25,10 +30,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     ListPage
   ],
-  providers: [
+  providers: [  /// HTTP통신하는 모듈 관련
     StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    SplashScreen
+    ,{provide: ErrorHandler, useClass: IonicErrorHandler},
+    RestProvider
   ]
 })
 export class AppModule {}

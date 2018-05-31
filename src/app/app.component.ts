@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import {ProductListPage} from "../pages/product-list/product-list";
 
 
 
@@ -27,6 +28,8 @@ export class MyApp {
       ,{ title: 'List', component: ListPage }
       ,{ title: 'ActionSheet', component: 'ActionSheetPage' }  //lazy loding
       ,{ title: 'Slide', component: 'SlidePage' }  //lazy loding
+      ,{ title: 'Product', component: 'ProductListPage' }  //lazy loding
+
 
     ];
 

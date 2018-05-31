@@ -372,3 +372,44 @@ C:\ionic_app\ionic-sidemenuApp>ionic g page slide
 
 
 C:\ionic_app\ionic-sidemenuApp>ionic g page nav
+
+
+
+
+
+
+
+json fake서버 설치
+npm install -g json-server
+
+
+
+
+
+json server 로 get post put delete 호출
+https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=ko
+
+
+
+
+
+
+
+
+C:\ionic_app\ionic-sidemenuApp> ionic g page  productList
+[OK] Generated a page named productList!
+
+C:\ionic_app\ionic-sidemenuApp>
+
+C:\ionic_app\ionic-sidemenuApp>ionic g provider rest
+[OK] Generated a provider named rest!
+
+C:\ionic_app\ionic-sidemenuApp>
+
+
+
+
+Observable<Object>
+
+Observable<Product[]>
+

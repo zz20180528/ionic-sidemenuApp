@@ -13,6 +13,7 @@ export class HomePage {
   public  profile = {} as Profile ;
   private  accountData  = {} as Account;
 
+
   constructor(public navCtrl: NavController
             ,public modalCtrl : ModalController  //modal 컨트롤러 관련 추가
               ,public alertCtrl : AlertController //alert 컨트롤러 관련 추가
